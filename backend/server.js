@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const pool = require('./db'); // ✅ Add pool import
 const app = express();
 
 const authRouter = require('./routes/auth');
@@ -121,30 +122,14 @@ app.get('/setup-database', async (req, res) => {
   }
 });
 
-// CORS configuration for both development and production
-const corsOptions = {
-  origin: function (origin, callback) {
-    // Allow requests with no origin (mobile apps, Postman, etc.)
-    if (!origin) return callback(null, true);
-
-    const allowedOrigins = [
-      'http://localhost:3000',  // Local development
-      'http://localhost:3001',  // Alternative local port
-      process.env.FRONTEND_URL  // Production frontend URL
-    ].filter(Boolean); // Remove undefined values
-
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+// ✅ Simplified CORS - allow all origins temporarily
+app.use(cors({
+  origin: true,
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
-};
+}));
 
-app.use(cors(corsOptions));
 app.use(express.json());
 
 // Mount routers
