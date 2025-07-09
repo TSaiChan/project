@@ -1,0 +1,112 @@
+.registration-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  padding: 2rem;
+  background-image: url("https://images.pexels.com/photos/912110/pexels-photo-912110.jpeg?cs=srgb&dl=atmosphere-blue-sky-clouds-912110.jpg&fm=jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  box-sizing: border-box;
+}
+
+.registration-form {
+  background: rgba(255, 255, 255, 0.97);
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.registration-form h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.2rem;
+  color: #1a237e;
+  font-weight: 700;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 1rem;
+  background-color: #1a237e;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0f1a63;
+  transform: translateY(-2px);
+}
+
+button.login-btn {
+  margin-top: 0.5rem;
+  background: transparent;
+  color: #1a237e;
+  border: 1px solid #1a237e;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button.login-btn:hover {
+  background-color: #1a237e;
+  color: white;
+}
+
+.message {
+  font-size: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.message.success {
+  color: green;
+}
+
+.message.error {
+  color: #dc3545;
+}
+
+.login-link {
+  margin-top: 1.5rem;
+  text-align: center;
+}

@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+*/node_modules/
+package-lock.json
+*/package-lock.json
+
+# Environment variables
+.env
+*/.env
+
+# Logs
+*.log
+logs/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build outputs
+build/
+dist/
+*/build/
+*/dist/
+
+# Temporary files
+*.tmp
+*.temp
